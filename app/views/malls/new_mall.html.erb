@@ -1,0 +1,11 @@
+<h1>Add a mall</h1>
+
+<%= form_tag(malls_path, method:"post") do %>
+  <%= label_tag "mall name" %>
+  <%= text_field_tag :name %>
+  <%= submit_tag "submit" %>
+<% end %>
+
+<%= link_to "Link", root_path %>
+<%= link_to "Link", malls_path %>
+<%= link_to "Link", new_mall_path %>

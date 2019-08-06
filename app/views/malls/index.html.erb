@@ -1,0 +1,14 @@
+<h1>Welcome to mall tracker</h1>
+<% if @malls.any? %>
+<ul>
+  <% @malls.each do |mall| %>
+ <%# this is the long way of writing the anchor tags %>
+  <li><a href="/malls/<%= mall.id %>"><%= mall.name %></a></li>
+  <%# this is a short way of doing it %>
+  <%# link to "whatever text", find the path you want, pass in the object and it'll find the ID automagically %>
+  <%= link_to mall.name, mall_path(mall) %>
+  <% end %>
+</ul>
+<% end %>
+
+<%= link_to "add a mall", new_mall_path  %>
